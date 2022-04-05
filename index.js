@@ -4,8 +4,9 @@ function distanceFromHqInBlocks(distance){
 }
 
 function distanceFromHqInFeet(distance2){
-    let blockDist= Math.abs(distance2-42);
-    return blockDist*264;
+    // let blockDist= distanceFromHqInBlocks(distance2)
+    //return blockDist*264
+    return distanceFromHqInBlocks(distance2)*264;
 }
 
 function distanceTravelledInFeet(pointA,pointB){
@@ -14,7 +15,7 @@ function distanceTravelledInFeet(pointA,pointB){
 }
 
 function calculatesFarePrice(start, destination){
-    let distTrav2= Math.abs(start-destination)*264;
+    let distTrav2= distanceTravelledInFeet(start,destination);
     if(distTrav2<=400){ 
         return 0
     }else if(distTrav2>400 && distTrav2<=2000){
